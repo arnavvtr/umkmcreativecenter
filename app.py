@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import itertools
+from io import BytesIO
+
 
 st.set_page_config(page_title="Web Dashboard ML", layout="wide")
 

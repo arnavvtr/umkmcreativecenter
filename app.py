@@ -3,7 +3,6 @@ import pandas as pd
 import itertools
 from io import BytesIO
 
-
 st.set_page_config(page_title="Web Dashboard ML", layout="wide")
 
 df = pd.read_csv("Data/algoritma_kmeans.csv")
@@ -81,10 +80,15 @@ if menu == "Beranda":
         "likes", "comments", "shares", "upload_time"
     ])
 
+    buffer = BytesIO()
+    template.to_excel(buffer, index=False)
+    buffer.seek(0)
+
     st.download_button(
         "Download Template Excel",
-        template.to_excel(index=False),
-        file_name="template_input.xlsx"
+        data=buffer,
+        file_name="template_input.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
 
     uploaded_file = st.file_uploader("Upload File Excel", type=["xlsx"])

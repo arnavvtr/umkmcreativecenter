@@ -4,7 +4,7 @@ import itertools
 
 st.set_page_config(page_title="Web Dashboard ML", layout="wide")
 
-df = pd.read_csv("data/algoritma_kmeans.csv")
+df = pd.read_csv("Data/algoritma_kmeans.csv")
 
 st.title("Web Dashboard Analisis Konten")
 
